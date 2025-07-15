@@ -1,0 +1,28 @@
+name: 03 - Worjflow Runners
+
+on:
+    push:
+
+jobs:
+    ubuntu-echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Show OS
+              run: |
+                echo "Running on Ubuntu runner"
+                echo "OS: ${{ runner.os }}"
+    windows-echo:
+        runs-on: windows-latest
+        steps:
+            - name: Show OS
+              shell: bash
+              run: |
+                echo "Running on Windows runner"
+                echo "OS: ${{ runner.os }}"
+    macos-echo:
+        runs-on: macos-latest
+        steps:
+            - name: Show OS
+              run: |
+                echo "Running on macOS runner"
+                echo "OS: ${{ runner.os }}"
