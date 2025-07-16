@@ -1,0 +1,23 @@
+specify under which conditions a specific event triggers our workflow
+--- basically, what thing (something) that will trigger the event
+
+example to use:
+
+name: My testing trigger
+on: 
+    push:
+        branches:
+            - main
+            - 'release/**' # with release keyword
+        paths-ignore:  # ignore the trigger event
+            - 'docs/**' # with docs keyword
+
+jobs:
+    node-16-tests:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: action/setup-node@v3
+              with:
+                node-version: 16
+            - run: npm ci
+            - run: npm test

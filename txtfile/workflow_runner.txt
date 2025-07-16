@@ -1,0 +1,17 @@
+we have two way:
+1. Github-hosted runner (standard)
+2. Self-hosted
+
+
+- Github hosted:
+---  Managed service (no need to setup the infra)
+---  steps shared the VM
+
+- Self-hosted:
+--- Run workflow on any infra
+--- Full control on the VM
+--- Self-Managed
+--- Add at repo/org/enterprise level
+--- Jobs not have to run on clean instances
+
+*** Do not run self-hosted runner in public repo

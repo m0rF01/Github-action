@@ -1,0 +1,31 @@
+Building block separate by 3:
+- Workflow
+--- Define at repo level
+--- Define which triggers actually start the workflow
+--- Are compose of one or more Jobs
+
+- Jobs
+--- Are define at the workflow level
+--- Define in which execution env they are run
+--- Are compose of one or more steps
+--- Run in parallel by default
+
+- Steps
+--- Are define at the job level
+--- Define the actual script or GitHub Action that will be executed
+--- Run sequentially by default 
+
+Example:
+
+name: My workflow
+on: push
+
+jobs: 
+    my-first-job:
+        runs-on: ubuntu-latest
+        steps: 
+            - run: echo "Hello world"
+    my-second-job:
+        runs-on: ubuntu-latest
+        steps:
+            -run: echo "Bye world"

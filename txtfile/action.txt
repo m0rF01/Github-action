@@ -1,0 +1,22 @@
+Custom application to perform complex, frequent repeated tasks
+example to setup node
+
+why it is important to use:
+1. Avoid repetitive and extensive commands
+2. can be configure via the with key-value pair
+3. can be combine with other steps
+4. we can create our own actions for public or private use
+
+how to use:
+
+name: My workflow
+on: push
+
+jobs: 
+    my-first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/setup-node@v3 #this part
+              with: 
+                node-version: 20 
+            - run: echo "Hello world"
