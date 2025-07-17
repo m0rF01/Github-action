@@ -1,0 +1,27 @@
+Expression
+
+- use dynamic values and expression in your workflows
+- used to reference info from multiple sources within the workflow
+- must use the ${{<expression>}} syntax
+- can be any combination:
+ --- literal values: string numbers, bool, null
+ --- Context values: value pass via the many workflow contexts
+ --- Function: BUild in fx provide by Gh 
+
+ Example to use:
+
+ name: My NPM workflow
+ on: [push, pull_request]
+ jobs: 
+    node-16-tests:
+        runs-on: ubuntu-latest
+        steps: 
+            - if: ${{github.event.name}} == 'push'  <--- this is where expression being used
+              run: |
+                echo "Triggered by a push event"
+                echo "Running on ${{github.ref_name}}"
+            - uses: actions/setup-node/v6
+              with: 
+                node-version: 16
+            - run: npm ci 
+            - run: npm test
