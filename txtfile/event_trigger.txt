@@ -1,11 +1,17 @@
+***Event trigger***
 specify under which conditions a specific event triggers our workflow
 --- basically, what thing (something) that will trigger the event
+
+***Activity trigger***
+specify which types of certain triggers execute our workflow
+
 
 example to use:
 
 name: My testing trigger
 on: 
-    push:
+    pull_request:
+        types: [opened, synchronize]  # activity types
         branches:
             - main
             - 'release/**' # with release keyword

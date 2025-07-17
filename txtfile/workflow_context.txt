@@ -1,0 +1,18 @@
+Access information about runs, variables, jobs and much more
+
+#Github
+--- Commit SHA
+--- Event name
+--- Ref or branch or tag to trigger the workflow
+
+#Env 
+--- Contains variable that have been defined in a workflow job or steps
+
+#Input 
+--- Contains input properties passed via the keyword with
+
+#Vars 
+--- Contains custom configuration variables set at org/repo/env level
+
+there are more:
+link to documentation : https://docs.github.com/en/actions/reference/contexts-reference
