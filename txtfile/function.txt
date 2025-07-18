@@ -1,0 +1,20 @@
+- Out-of-the-box functions to model complex behavior
+There will be 2 types of functions:
+--- General purpose functions 
+--- Status check functions
+
+### General purpose functions 
+- provide a set of utility functions to interact with data from multiple contexts and model 
+eg:
+Contains(), fromJSON()
+
+### Status check functions
+- Provide a set of fx that allows using the status of the workflow, previous jobs or steps
+- determine whether a certain job or step should be executed
+eg:
+1. success()
+2. failure()
+3. always()
+4. canceled()
+
+github link: https://docs.github.com/en/actions/reference/evaluate-expressions-in-workflows-and-actions#functions
