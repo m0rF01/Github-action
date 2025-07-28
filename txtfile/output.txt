@@ -1,0 +1,23 @@
+Output:
+
+1. Define a step ID for the steps that produce Output
+2. Echo key-value pairs to the $GITHUB_OUTPUT variable
+3. Mention the outputs in the outputs section of the job
+4. List the job as dependency of jobs that need the outputs
+5. Access the output via the needs context
+
+example:
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    outputs:
+      name: ${{steps.step1.outputs.NAME}}
+    steps:
+      - id: step1  
+        run: echo "NAME=Lauro" >> "$GITHUB_OUTPUT"  ## ">>" means put into the file, while ">" means override current file data
+  goodbye:
+    runs-on: ubuntu-latest
+    needs: welcome
+    steps:
+      - run: echo "Bye, ${{needs.welcome.outputs.name}}"
